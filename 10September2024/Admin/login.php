@@ -5,8 +5,8 @@ session_start();
 if(isset($_POST['submit'])){
    $Email = $_POST['email'];
     $Password = $_POST['pass'];
-   echo $Password= md5($Password);
-   echo $usertype = $_POST['usertype'];
+    $Password= md5($Password);
+    $usertype = $_POST['usertype'];
 }
 
 if($usertype == 1){
@@ -21,12 +21,12 @@ if($usertype == 1){
 }
 
 if($usertype == 2){
-    $Luffy = $Haki->query("SELECT * FROM doctors WHERE email = '$Email' AND password ='$Password'");
+    $Luffy = $Haki->query("SELECT * FROM doctors WHERE docEmail = '$Email' AND password ='$Password'");
     if($Luffy->num_rows){
         $_SESSION['email'] = $Email;
         $_SESSION['usertype'] = $usertype;
 
-        header("location:doctor_dashboard.php");
+        header("location:doctors_dashboard.php");
 
     }
 }
