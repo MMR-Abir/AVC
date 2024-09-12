@@ -12,11 +12,19 @@
 			</div>
 			<div class="row">
 				<div class="team-slider owl-carousel owl-theme">
+
+							<?php 
+							include_once("Admin/hakiconfig.php");
+							$l = $Haki->query("SELECT * FROM doctors");
+							while($u = $l->fetch_assoc()){
+							
+							?>
+
 					<div class="single-doctor single-doctor-warp">
-						<img class="img-fluid" src="assets/img/team/5.jpg" alt="" />
+						<img class="img-fluid" src=<?php echo $u['photo'] ?> alt="" />
 						<div class="single-doctor-info">
-							<h4>Revenna Warner</h4>
-							<span>Neurologist</span> 
+							<h4><?php echo $u['doctorName'] ?></h4>
+							<span><?php echo $u['specilization'] ?></span> 
 						</div>
 						<div class="single-doctor-mask">
 							<div class="single-doctor-mask-inner">
@@ -29,73 +37,7 @@
 						</div>
 					</div>
 					<!-- end single doctor -->	
-					<div class="single-doctor single-doctor-warp">
-						<img class="img-fluid" src="assets/img/team/4.jpg" alt="" />
-						<div class="single-doctor-info">
-							<h4>Stevest Henry</h4>
-							<span>Ophthalmologist</span> 
-						</div>
-						<div class="single-doctor-mask">
-							<div class="single-doctor-mask-inner">
-								<h5>About Doctor</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-								<ul>
-								   <li><a href="#">Get Appointment</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- end single doctor -->
-					<div class="single-doctor single-doctor-warp">
-						<img class="img-fluid" src="assets/img/team/3.jpg" alt="" />
-						<div class="single-doctor-info">
-							<h4>Williums Kevins</h4>
-							<span>Dermatologist</span> 
-						</div>
-						<div class="single-doctor-mask">
-							<div class="single-doctor-mask-inner">
-								<h5>About Doctor</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-								<ul>
-								   <li><a href="#">Get Appointment</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- end single doctor -->
-					<div class="single-doctor single-doctor-warp">
-						<img class="img-fluid" src="assets/img/team/1.jpg" alt="" />
-						<div class="single-doctor-info">
-							<h4>Kewillues Jenifer</h4>
-							<span>Radiologist</span> 
-						</div>
-						<div class="single-doctor-mask">
-							<div class="single-doctor-mask-inner">
-								<h5>About Doctor</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-								<ul>
-								   <li><a href="#">Get Appointment</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- end single doctor -->
-					<div class="single-doctor single-doctor-warp">
-						<img class="img-fluid" src="assets/img/team/2.jpg" alt="" />
-						<div class="single-doctor-info">
-							<h4>Marquis Williums</h4>
-							<span>Urologist</span> 
-						</div>
-						<div class="single-doctor-mask">
-							<div class="single-doctor-mask-inner">
-								<h5>About Doctor</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-								<ul>
-								   <li><a href="#">Get Appointment</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
+					<?php } ?>
 					<!-- end single doctor -->
 				</div>
 			</div>
